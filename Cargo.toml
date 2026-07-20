@@ -2,5 +2,8 @@
 members = [
     "engine_server",
     "solver_client",
+    "shared",
 ]
+
 resolver = "2"
+

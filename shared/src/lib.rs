@@ -1,0 +1,26 @@
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct GuessRequest {
+    pub word: String,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub enum LetterStatus {
+    Green,
+    Yellow,
+    Gray,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct GuessResponse {
+    pub feedback: Vec<LetterStatus>,
+    pub is_win: bool,
+}
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct GameSession {
+    pub game_id: String,
+    pub secret_word: String,
+    pub guesses: Vec<String>,
+}
